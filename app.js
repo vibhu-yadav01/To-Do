@@ -1,7 +1,11 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () 
+{
     let form = document.getElementById("todoForm");
     let input = document.getElementById("taskInput");
     let list = document.getElementById("taskList");
+    let theme = document.querySelector(".theme");
+    let bd = document.querySelector("body");
+    let heading = document.querySelector("h1");
 
     form.addEventListener("submit", function (event) {
         event.preventDefault(); // Prevent page reload
@@ -37,6 +41,22 @@ document.addEventListener("DOMContentLoaded", function () {
             taskItem.style.opacity = 0;
             taskItem.style.transform = "translateX(-10px)";
             setTimeout(() => taskItem.remove(), 300);
+        }
+    });
+     
+    let count = 0;
+    theme.addEventListener("click", function () {
+        count++;
+        console.log(count);
+    
+        // Toggle theme based on count
+        if (count %2== 0) {
+            bd.style.backgroundColor =`#ff9a9e`;
+            heading.style.color =`#ff6b81`;
+            
+        } else {
+            bd.style.backgroundColor = '#ADD8E6';
+            heading.style.color =`#896bff`;
         }
     });
 });

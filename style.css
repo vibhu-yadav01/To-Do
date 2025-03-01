@@ -3,7 +3,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    background-color: #ff9a9e;
     text-align: center;
     min-height: 100vh;
     justify-content: center;
@@ -66,4 +66,12 @@ input {
 
 .delete:hover {
     background-color: #e84118;
+}
+.theme{
+    display: flex;
+    font-size: 0.7rem;
+    cursor: pointer;
+}
+.mt-4 {
+    margin-top: 0rem !important;
 }
