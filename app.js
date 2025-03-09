@@ -59,4 +59,14 @@ document.addEventListener("DOMContentLoaded", function ()
             heading.style.color =`#896bff`;
         }
     });
+
+//logo
+
+let logo = document.querySelector(".logo");
+let faze = document.querySelector(".faze");
+
+logo.addEventListener("click", ()=>{
+    faze.classList.remove("faze");
+    logo.remove();
+})
 });
