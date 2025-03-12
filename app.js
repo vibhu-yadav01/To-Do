@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function ()
     let bd = document.querySelector("body");
     let heading = document.querySelector("h1");
 
+
     form.addEventListener("submit", function (event) {
         event.preventDefault(); // Prevent page reload
 
@@ -24,7 +25,10 @@ document.addEventListener("DOMContentLoaded", function ()
             }, 100);
 
             li.innerHTML = `
-                <span>${taskText}</span>
+                <label>
+                    <input type="checkbox" class= "work">
+                    <span>${taskText}</span>
+                </label>
                 <button class="btn btn-danger btn-sm delete">Delete</button>
             `;
 
@@ -32,6 +36,8 @@ document.addEventListener("DOMContentLoaded", function ()
             input.value = ""; // Clear input
         }
     });
+
+
 
     list.addEventListener("click", function (event) {
         if (event.target.classList.contains("delete")) {
@@ -42,7 +48,19 @@ document.addEventListener("DOMContentLoaded", function ()
             taskItem.style.transform = "translateX(-10px)";
             setTimeout(() => taskItem.remove(), 300);
         }
+       
     });
+    list.addEventListener("change", function (event) {
+        if (event.target.classList.contains("work")) {
+            let label = event.target.closest("label");
+            if (event.target.checked) {
+                label.style.textDecoration = "line-through";
+            } else {
+                label.style.textDecoration = "none";
+            }
+        }
+    });
+
      
     let count = 0;
     theme.addEventListener("click", function () {
@@ -60,13 +78,13 @@ document.addEventListener("DOMContentLoaded", function ()
         }
     });
 
-//logo
+    //logo
 
-let logo = document.querySelector(".logo");
-let faze = document.querySelector(".faze");
+    let logo = document.querySelector(".logo");
+    let faze = document.querySelector(".faze");
 
-logo.addEventListener("click", ()=>{
-    faze.classList.remove("faze");
-    logo.remove();
-})
+    logo.addEventListener("click", ()=>{
+        faze.classList.remove("faze");
+        logo.remove();
+    })
 });
