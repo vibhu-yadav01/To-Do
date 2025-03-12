@@ -125,12 +125,12 @@ input {
 
 input[type ="checkbox"]{
     appearance: none;
-    width: 1rem;
     margin-right: 5px;
     cursor: pointer;
     position: relative;
     background-color: white;
     border: 2px solid black;
+    border-radius: 50%;
 }
 
 input[type = "checkbox"]:checked{
