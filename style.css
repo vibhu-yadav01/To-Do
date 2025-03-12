@@ -70,8 +70,9 @@ input {
 }
 .theme{
     display: flex;
-    font-size: 0.7rem;
+    font-size: 1rem;
     cursor: pointer;
+    margin-top: 1rem;
 }
 .mt-4 {
     margin-top: 0rem !important;
@@ -102,7 +103,6 @@ input {
     justify-content: center;
     font-size: 7rem;
     line-height: 75%;
-    border: 4px solid #e84118;
     border-radius: 25%;
     transform: translateY(-2rem);
     z-index: -10;

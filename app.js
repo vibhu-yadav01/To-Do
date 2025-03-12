@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function ()
                     <input type="checkbox" class= "work">
                     <span>${taskText}</span>
                 </label>
-                <button class="btn btn-danger btn-sm delete">Delete</button>
+                <button class="btn btn-danger btn-sm delete"><i class="fa-solid fa-trash"></i></button>
             `;
 
             list.appendChild(li);
@@ -61,7 +61,18 @@ document.addEventListener("DOMContentLoaded", function ()
         }
     });
 
-     
+    
+    //logo
+
+    let logo = document.querySelector(".logo");
+    let faze = document.querySelector(".faze");
+
+    logo.addEventListener("click", ()=>{
+        faze.classList.remove("faze");
+        logo.remove();
+    });
+
+
     let count = 0;
     theme.addEventListener("click", function () {
         count++;
@@ -71,20 +82,18 @@ document.addEventListener("DOMContentLoaded", function ()
         if (count %2== 0) {
             bd.style.backgroundColor =`#ff9a9e`;
             heading.style.color =`#ff6b81`;
+            logo.style.color = `#ff6b81`;
+            logo.style.border = `#e84118`;
+
             
         } else {
             bd.style.backgroundColor = '#ADD8E6';
             heading.style.color =`#896bff`;
+            logo.style.color = `#896bff`;
+            logo.style.border = `#ADD8E6`;
+
         }
     });
 
-    //logo
 
-    let logo = document.querySelector(".logo");
-    let faze = document.querySelector(".faze");
-
-    logo.addEventListener("click", ()=>{
-        faze.classList.remove("faze");
-        logo.remove();
-    })
 });
