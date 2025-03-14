@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function ()
                     <input type="checkbox" class= "work">
                     <span>${taskText}</span>
                 </label>
+                <button class="edit btn btn-sm"><i class="fa-solid fa-pen-to-square"></i></button>
                 <button class="btn btn-danger btn-sm delete"><i class="fa-solid fa-trash"></i></button>
             `;
 
@@ -50,6 +51,9 @@ document.addEventListener("DOMContentLoaded", function ()
         }
        
     });
+
+
+    //task complete(cut option)
     list.addEventListener("change", function (event) {
         if (event.target.classList.contains("work")) {
             let label = event.target.closest("label");
@@ -61,6 +65,19 @@ document.addEventListener("DOMContentLoaded", function ()
         }
     });
 
+    //edit option
+    list.addEventListener("click", function(event){
+        if(event.target.classList.contains("edit")){
+            let e= event.target.closest("li");
+            input.value = e.innerText;
+            let taskItem = event.target.closest("li");
+
+            taskItem.style.opacity = 0;
+            taskItem.style.transform = "translateX(-10px)";
+            setTimeout(() => taskItem.remove(), 300);
+
+        }
+    })
     
     //logo
 

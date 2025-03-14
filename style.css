@@ -152,3 +152,12 @@ label{
     display: flex;
     flex-direction: row;
 }
+
+.edit{
+    position: relative;
+    left: 31%;
+    margin-left: 5px;
+}
+.edit:hover{
+    background-color: #88ea8b;
+}
