@@ -41,16 +41,22 @@ document.addEventListener("DOMContentLoaded", function ()
 
 
     list.addEventListener("click", function (event) {
-        if (event.target.classList.contains("delete")) {
+        if (event.target.closest(".delete")) {  // Use `closest()` for reliability
             let taskItem = event.target.closest("li");
-
-            // Add fade-out animation
+    
+            if (!taskItem) return;
+    
+            event.stopPropagation();  // Prevent event from bubbling up
+    
+            taskItem.style.transition = "opacity 0.3s ease-out, transform 0.3s ease-out";
             taskItem.style.opacity = 0;
             taskItem.style.transform = "translateX(-10px)";
+    
             setTimeout(() => taskItem.remove(), 300);
         }
-       
     });
+    
+    
 
 
     //task complete(cut option)
@@ -65,19 +71,28 @@ document.addEventListener("DOMContentLoaded", function ()
         }
     });
 
-    //edit option
-    list.addEventListener("click", function(event){
-        if(event.target.classList.contains("edit")){
-            let e= event.target.closest("li");
-            input.value = e.innerText;
+    list.addEventListener("click", function (event) {
+        if (event.target.closest(".edit")) {  // Use `closest()` for reliability
             let taskItem = event.target.closest("li");
-
-            taskItem.style.opacity = 0;
-            taskItem.style.transform = "translateX(-10px)";
-            setTimeout(() => taskItem.remove(), 300);
-
+    
+            if (!taskItem) return;
+    
+            event.stopPropagation();  // Prevent label from interfering
+    
+            let taskText = taskItem.querySelector("span").innerText.trim();
+            input.value = taskText;
+    
+            requestAnimationFrame(() => {
+                taskItem.style.transition = "opacity 0.3s ease-out, transform 0.3s ease-out";
+                taskItem.style.opacity = 0;
+                taskItem.style.transform = "translateX(-10px)";
+            });
+    
+            taskItem.addEventListener("transitionend", () => taskItem.remove(), { once: true });
         }
-    })
+    });
+    
+    
     
     //logo
 

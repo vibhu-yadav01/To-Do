@@ -49,6 +49,7 @@ input {
     padding: 12px;
     border-radius: 8px;
     transition: 0.3s;
+    margin-top: 10px;
 }
 
 .list-group-item:hover {
