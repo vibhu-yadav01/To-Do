@@ -125,6 +125,7 @@ input {
  }
 
 input[type ="checkbox"]{
+    width:0px;
     appearance: none;
     margin-right: 5px;
     cursor: pointer;
