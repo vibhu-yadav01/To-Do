@@ -156,8 +156,8 @@ label{
 }
 
 .edit{
-    position: relative;
-    left: 31%;
+    position: absolute;
+    left: 28rem;
     margin-left: 5px;
 }
 .edit:hover{
