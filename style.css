@@ -157,9 +157,26 @@ label{
 
 .edit{
     position: absolute;
-    left: 28rem;
+    left: 85%;
     margin-left: 5px;
 }
 .edit:hover{
     background-color: #88ea8b;
+}
+@media( max-width:1140px ){
+    .edit{
+        position: absolute;
+        left: 80%;
+    }
+}
+
+@media (max-width: 375px){
+    .list-group-item {
+        align-items: center;
+        padding: 8px;
+        width: 100vh;
+        border-radius: 2.5px;
+        transition: 0.3s;
+        margin-top: 5px;
+    }
 }
