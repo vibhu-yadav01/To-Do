@@ -19,14 +19,14 @@ body {
 
 h1 {
     font-weight: 600;
-    color: #ff6b81;
+    color:rgb(255, 107, 213);
     display: block;
 }
 
 input {
     width: 60%;
     padding: 10px;
-    border: 2px solid #ff6b81;
+    border: 2px solid #ff6bc4;
     border-radius: 5px;
     outline: none;
 }
@@ -95,7 +95,7 @@ input {
 .logo {
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: rgb(255, 255, 255);
-    color: #ff6b81;
+    color: #ff6bd5;
     width: 50vh;
     height: 50vh;
     margin: auto;
@@ -167,16 +167,5 @@ label{
     .edit{
         position: absolute;
         left: 80%;
-    }
-}
-
-@media (max-width: 375px){
-    .list-group-item {
-        align-items: center;
-        padding: 8px;
-        width: 100vh;
-        border-radius: 2.5px;
-        transition: 0.3s;
-        margin-top: 5px;
     }
 }
